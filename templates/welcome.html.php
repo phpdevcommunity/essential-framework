@@ -16,24 +16,24 @@
         }
 
         body {
-            color: #070707;
-            background-color: #f3f3f3d4;
-            font-size: 15px;
+            color: rgb(166, 223, 239);
+            background: linear-gradient(#000510f7, #07193efa);
+            font-size: 14px;
             margin: 0;
             height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-family: 'Arial', sans-serif;
+            font-family: Inter, sans-serif;
         }
 
         .title {
             font-weight: 600;
             line-height: 1.125;
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
-            color: #00445f;
+            color: #FFF;
         }
 
         .small {
@@ -47,7 +47,7 @@
         }
 
         a {
-            color: #3b4351;
+            color: rgb(166, 223, 239);
             cursor: pointer;
             text-decoration: underline;
         }
@@ -76,10 +76,10 @@
 
         .badge {
             align-items: center;
-            background-color: #00445f;
-            color: #fff;
+            background-color: #07193e;
+            color: #FFF;
             display: inline-flex;
-            font-size: 0.9em;
+            font-size: 1em;
             height: 2em;
             justify-content: center;
             line-height: 1.5;
