@@ -15,7 +15,7 @@ Meeting this requirement is essential to work with the Essential Framework effec
 To quickly set up a new project using the Essential Framework, you can use Composer. Open your terminal and run the following command:
 
 ```bash
-composer create-project devcoder-xyz/essential
+composer create-project devcoder-xyz/essential-framework
 ```
 This command will create a new Essential Framework project in a directory named "essential." It includes all the necessary files and dependencies to start your PHP web application development.
 
@@ -46,7 +46,6 @@ The Essential Framework comes with several default PHP libraries and dependencie
 - **[laminas/laminas-diactoros](https://packagist.org/packages/laminas/laminas-diactoros)**: Laminas Diactoros is a library for handling HTTP messages and PSR-7 compatibility. It provides essential classes and utilities for managing HTTP requests and responses in your application.
 
 These default dependencies are included in your Essential Framework project to streamline common web development tasks. You can explore their documentation for more details on how to use them in your applications.
-
 
 ## Running a Local Web Server
 
@@ -85,7 +84,7 @@ This command reads the configuration from the `docker-compose.yml` file and laun
 
 Choose the method that best suits your development environment and preferences for running the Essential Framework locally.
 
-![alt text](https://placehold.co/600x400)
+![alt text](./framework-doc/_essential_welcome.png)
 
 ## Project Structure
 
