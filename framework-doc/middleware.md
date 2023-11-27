@@ -50,8 +50,6 @@ The Essential Framework supports different environments to accommodate various d
 
 The distinction between the environments allows you to configure your application differently based on whether it's in a development or production context, providing flexibility and performance optimization during different stages of your project.
 
-My apologies for the misunderstanding. To clarify, you'd like me to provide examples of fictitious middlewares that are configured specifically for the "dev" environment and explain their purpose. Here's an example:
-
 ## Custom Development Middleware
 
 In the "dev" environment, you can configure custom middlewares that aid in debugging, logging, or other development-related tasks. These middlewares help streamline development and can be excluded in the production environment to optimize performance.

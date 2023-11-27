@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="<?php echo container()->get('app.locale') ?>">
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noodp,notranslate,noimageindex"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Essential PHP Framework!</title>
     <style>
         *,
@@ -17,7 +18,7 @@
 
         body {
             color: rgb(166, 223, 239);
-            background: linear-gradient(#000510f7, #07193efa);
+            background: linear-gradient(#000510de, #07193efa);
             font-size: 14px;
             margin: 0;
             height: 100vh;
@@ -37,7 +38,7 @@
         }
 
         .small {
-            font-size: 1rem;
+            font-size: 1em;
         }
 
         .sub-title {
@@ -53,14 +54,22 @@
         }
 
         header {
-            height: 60px;
+            min-height: 70px;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             padding: 0.5em;
         }
 
         main {
             flex: 1;
+        }
+        footer {
+            padding: 5px;
+        }
+        footer p {
+            font-size: 1em !important;
         }
 
         .text-center {
@@ -125,10 +134,7 @@
     <p class="text-center">
         Made with <span style="color: #e25555;">❤</span> in Paris by
         <a class="mr-4" href="https://essential.devcoder.xyz" target="_blank" rel="noopener">
-            Essential - Devcoder.xyz (F. Michel.R)
-        </a>
-        <a class="ml-4" href="mailto:dev@devcoder.xyz">
-            Contact us
+            Devcoder.xyz (F. Michel.R)
         </a>
     </p>
 </footer>

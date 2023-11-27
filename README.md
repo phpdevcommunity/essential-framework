@@ -139,7 +139,7 @@ The Essential Framework follows a structured directory layout to help you organi
 
 Here's a breakdown of the main directories and their purposes:
 
-- **bin**: This directory contains the `console` script, which serves as the entry point for running command-line tasks and artisan commands in your application.
+- **bin**: This directory contains the `console` script, which serves as the entry point for running command-line tasks and commands in your application.
 
 - **config**: Configuration files for your application are stored here. These files define various aspects of your application, such as routes, services, middleware, and more. The `framework.php` file is a crucial configuration file for the Essential Framework.
 
