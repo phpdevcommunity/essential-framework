@@ -19,4 +19,5 @@ declare(strict_types=1);
 #--------------------------------------------------------------------
 return [
     \Essential\Core\Package\EssentialCorePackage::class => ['dev', 'prod'],
+    \App\UserManagementPackage\UserManagementPackage::class => ['dev', 'prod'],
 ];
