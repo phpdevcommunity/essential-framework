@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace App;
 
-use Essential\Core\BaseKernel;
+use PhpDevCommunity\Michel\Core\BaseKernel;
 use function dirname;
 
 /**
- * @package    Essential
- * @author    Devcoder.xyz <dev@devcoder.xyz>
+ * @package    PhpDevCommunity Michel
+ * @author    PhpDevCommunity <michel@phpdevcommunity.com>
  * @license    https://opensource.org/licenses/MIT	MIT License
- * @link    https://www.devcoder.xyz
+ * @link    https://www.phpdevcommunity.com
  */
 final class Kernel extends BaseKernel
 {
     public function getCacheDir(): string
     {
-        return getenv('APP_CACHE_DIR') ?: $this->getProjectDir() . DIRECTORY_SEPARATOR . 'var' . DIRECTORY_SEPARATOR . 'cache';
+        return getenv('APP_CACHE_DIR') ?: filepath_join($this->getProjectDir(), 'var', 'cache');
     }
 
     public function getProjectDir(): string
@@ -27,22 +27,22 @@ final class Kernel extends BaseKernel
 
     public function getLogDir(): string
     {
-        return getenv('APP_LOG_DIR') ?: $this->getProjectDir() . DIRECTORY_SEPARATOR . 'var' . DIRECTORY_SEPARATOR . 'log';
+        return getenv('APP_LOG_DIR') ?: filepath_join($this->getProjectDir(), 'var', 'log');
     }
 
     public function getConfigDir(): string
     {
-        return getenv('APP_CONFIG_DIR') ?: $this->getProjectDir() . DIRECTORY_SEPARATOR . 'config';
+        return getenv('APP_CONFIG_DIR') ?: filepath_join( $this->getProjectDir(), 'config');
     }
 
     public function getPublicDir(): string
     {
-        return getenv('APP_PUBLIC_DIR') ?: $this->getProjectDir() . DIRECTORY_SEPARATOR . 'public';
+        return getenv('APP_PUBLIC_DIR') ?: filepath_join($this->getProjectDir() , 'public');
     }
 
     public function getEnvFile(): string
     {
-        return $this->getProjectDir() . DIRECTORY_SEPARATOR . '.env';
+        return filepath_join($this->getProjectDir() , '.env');
     }
 
     protected function afterBoot(): void

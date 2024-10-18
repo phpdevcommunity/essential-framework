@@ -3,21 +3,21 @@
 declare(strict_types=1);
 
 /**
- * Pulsar PHP Framework
+ * Michel PHP Framework
  *
  * An open source application development framework for PHP
  *
- * @package    Pulsar
- * @author    Devcoder.xyz
+ * @package    Michel
+ * @author    PhpDevCommunity
  * @license    https://opensource.org/licenses/MIT	MIT License
- * @link    https://www.devcoder.xyz
+ * @link    https://www.phpdevcommunity.com
  */
 
-use DevCoder\Flash\Flash;
-use DevCoder\Log\Handler\FileHandler;
-use DevCoder\Log\Logger;
-use DevCoder\Session\Storage\NativeSessionStorage;
-use DevCoder\Session\Storage\SessionStorageInterface;
+use PhpDevCommunity\Flash\Flash;
+use PhpDevCommunity\Log\Handler\FileHandler;
+use PhpDevCommunity\Log\Logger;
+use PhpDevCommunity\Session\Storage\NativeSessionStorage;
+use PhpDevCommunity\Session\Storage\SessionStorageInterface;
 use Middlewares\BasePath;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
@@ -29,25 +29,34 @@ return [
     BasePath::class => static function (ContainerInterface $container) {
         return new BasePath($container->get('app.url'));
     },
+//    \App\Middleware\ForceHttpsMiddleware::class => static function (ContainerInterface $container) {
+//        return new \App\Middleware\ForceHttpsMiddleware(response_factory());
+//    },
+//    \App\Middleware\IpRestrictionMiddleware::class => static function (ContainerInterface $container) {
+//        return new \App\Middleware\IpRestrictionMiddleware(["192.168.33.12"],response_factory());
+//    },
+//    \App\Middleware\MaintenanceMiddleware::class => static function (ContainerInterface $container) {
+//        return new \App\Middleware\MaintenanceMiddleware(true,response_factory());
+//    },
     SessionStorageInterface::class => static function (ContainerInterface $container) {
         return new NativeSessionStorage();
     },
     Flash::class => static function (ContainerInterface $container) {
         $session = $container->get(SessionStorageInterface::class);
-        return new DevCoder\Flash\Flash($session);
+        return new PhpDevCommunity\Flash\Flash($session);
     },
     LoggerInterface::class => static function (ContainerInterface $container) {
-        $logFileName = $container->get('essential.logs_dir') . DIRECTORY_SEPARATOR . date('Y-m-d') . '.log';
+        $logFileName = $container->get('michel.logs_dir') . DIRECTORY_SEPARATOR . date('Y-m-d') . '.log';
         $handler = new FileHandler($logFileName);
         return new Logger($handler);
-    }
+    },
 //    'router' => static function (ContainerInterface $container): object {
 //
 //        /**
-//         * @var array<\Essential\Core\Router\Route> $routes
+//         * @var array<\PhpDevCommunity\Michel\Core\Router\Route> $routes
 //         */
-//        $routes = $container->get('essential.routes');
-//        $factory = new \Essential\Core\Router\Bridge\RouteFactory();
+//        $routes = $container->get('michel.routes');
+//        $factory = new \PhpDevCommunity\Michel\Core\Router\Bridge\RouteFactory();
 //
 //        /**
 //         * Aura Router Example : composer require aura/router

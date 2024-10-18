@@ -1,9 +1,9 @@
 version: "2"
 
 services:
-  php-fpm-essential:
+  php-fpm-michel:
     build: './.docker/php'
-    container_name: php-fpm-essential
+    container_name: php-fpm-michel
     working_dir: /app
     volumes:
       - ./:/app
@@ -12,11 +12,11 @@ services:
 
   nginx-pulsar:
     image: nginx:1-alpine
-    container_name: nginx-essential
+    container_name: nginx-michel
     links:
-      - php-fpm-essential
+      - php-fpm-michel
     depends_on:
-      - php-fpm-essential
+      - php-fpm-michel
     ports:
       - "${DOCKER_PORT_NGINX}:80"
     volumes:

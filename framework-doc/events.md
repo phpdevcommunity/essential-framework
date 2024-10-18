@@ -1,12 +1,12 @@
 # Events
 
-The Essential Framework is compatible with PSR-14, which means that all event dispatchers implementing PSR-14 are compatible with the framework. By default, the framework uses the `devcoder-xyz/php-event-dispatcher` library for event handling. You can refer to the documentation [here](https://github.com/devcoder-xyz/php-event-dispatcher) for more details on how to use this library.
+The Michel Framework is compatible with PSR-14, which means that all event dispatchers implementing PSR-14 are compatible with the framework. By default, the framework uses the `phpdevcommunity/php-event-dispatcher` library for event handling. You can refer to the documentation [here](https://github.com/phpdevcommunity/php-event-dispatcher) for more details on how to use this library.
 
 Now, let's explore how events are handled within the framework and how you can integrate your event listeners and subscribers.
 
 ## Event Configuration
 
-Event configuration in the Essential Framework is managed through the `listeners.php` file located in the `/config` directory. This file allows you to specify event-to-listener mappings for your application.
+Event configuration in the Michel Framework is managed through the `listeners.php` file located in the `/config` directory. This file allows you to specify event-to-listener mappings for your application.
 
 Here's an example of event configuration in the framework, demonstrating two ways to define event listeners:
 
@@ -31,7 +31,7 @@ You can choose either of these methods to configure event listeners based on you
 
 ## Complete Example: Dependency Injection with Event Dispatcher
 
-In this complete example, we'll create a custom event and listener, configure the event dispatcher, and demonstrate dependency injection in a controller. We'll use the Essential Framework's default event dispatcher, `devcoder-xyz/php-event-dispatcher`.
+In this complete example, we'll create a custom event and listener, configure the event dispatcher, and demonstrate dependency injection in a controller. We'll use the Michel Framework's default event dispatcher, `phpdevcommunity/php-event-dispatcher`.
 
 ### Step 1: Create a Custom Event
 
@@ -42,7 +42,7 @@ Let's create a custom event class named `ExampleEvent`. This event will carry an
 
 namespace App\Event;
 
-use DevCoder\Listener\Event;
+use PhpDevCommunity\Listener\Event;
 
 final class ExampleEvent extends Event
 {
@@ -138,7 +138,7 @@ class MainController
 
         // You can continue your controller logic here
 
-        return response('<h1>Welcome to the Essential Framework!</h1>');
+        return response('<h1>Welcome to the Michel Framework!</h1>');
     }
 }
 ```

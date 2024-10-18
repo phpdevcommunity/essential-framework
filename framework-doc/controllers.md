@@ -1,10 +1,10 @@
 # Controllers
 
-Controllers are an essential part of the Essential Framework, responsible for handling incoming HTTP requests, processing application logic, and returning HTTP responses. In this chapter, we'll explore how to create controllers and define routes to handle specific HTTP requests.
+Controllers are an essential part of the Michel Framework, responsible for handling incoming HTTP requests, processing application logic, and returning HTTP responses. In this chapter, we'll explore how to create controllers and define routes to handle specific HTTP requests.
 
 ## Introduction
 
-In the Essential Framework, controllers play a central role in processing incoming requests. A controller is a PHP class that contains methods to handle different HTTP actions (e.g., GET, POST, etc.). These methods receive an HTTP request, process it, and return an HTTP response.
+In the Michel Framework, controllers play a central role in processing incoming requests. A controller is a PHP class that contains methods to handle different HTTP actions (e.g., GET, POST, etc.). These methods receive an HTTP request, process it, and return an HTTP response.
 
 Here's a basic example of a controller class:
 
@@ -17,7 +17,7 @@ class MainController
         // You can generate HTML, retrieve data, and return a response
 
         // For demonstration purposes, let's return a basic HTML response
-        return response('<h1>Welcome to the Essential Framework!</h1>');
+        return response('<h1>Welcome to the Michel Framework!</h1>');
     }
 }
 ```
@@ -69,7 +69,7 @@ To make your controllers accessible via HTTP routes, you need to define routes i
 Here's an example of defining a route that maps to the `UserController` class:
 
 ```php
-use Essential\Core\Router\Route;
+use PhpDevCommunity\Michel\Core\Router\Route;
 use App\Controller\UserController;
 
 // Define a route that maps to the UserController's 'index' method
@@ -78,21 +78,21 @@ Route::get('users', '/users', [UserController::class, 'index']);
 
 In this example, the `Route::get` method specifies that the `UserController`'s `index` method should be invoked when an HTTP GET request is made to the `/users` path.
 
-This concludes our introduction to controllers in the Essential Framework. In the next chapters, we'll dive deeper into routing and explore how to define custom routes for your application.
+This concludes our introduction to controllers in the Michel Framework. In the next chapters, we'll dive deeper into routing and explore how to define custom routes for your application.
 
 # Dependency Injection and Helpers
 
-In the Essential Framework, you can leverage dependency injection to inject services and dependencies directly into your controller methods. Additionally, the framework provides various helper functions to simplify common tasks when building your application. In this chapter, we'll explore dependency injection, available helpers, and provide examples.
+In the Michel Framework, you can leverage dependency injection to inject services and dependencies directly into your controller methods. Additionally, the framework provides various helper functions to simplify common tasks when building your application. In this chapter, we'll explore dependency injection, available helpers, and provide examples.
 
 ## Dependency Injection in Controllers
 
-Controllers in the Essential Framework support constructor dependency injection. This means you can type-hint your controller's constructor parameters, and the framework will automatically inject the required services when calling your controller methods.
+Controllers in the Michel Framework support constructor dependency injection. This means you can type-hint your controller's constructor parameters, and the framework will automatically inject the required services when calling your controller methods.
 
 Let's take a look at an example controller that demonstrates dependency injection:
 
 ```php
-use DevCoder\Session\Storage\SessionStorageInterface;
-use Essential\Core\Controller;
+use PhpDevCommunity\Session\Storage\SessionStorageInterface;
+use PhpDevCommunity\Michel\Core\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -123,7 +123,7 @@ class MainController extends Controller
         ]);
 
         // Return a basic HTML response
-        return response('<h1>Welcome to the Essential Framework!</h1>');
+        return response('<h1>Welcome to the Michel Framework!</h1>');
     }
 }
 ```
@@ -132,7 +132,7 @@ In this example, the `MainController` class injects a `SessionStorageInterface` 
 
 ## Available Helpers
 
-The Essential Framework includes a set of helper functions to streamline common tasks in your controllers and views. Here are some of the available helpers:
+The Michel Framework includes a set of helper functions to streamline common tasks in your controllers and views. Here are some of the available helpers:
 
 ### Redirecting
 

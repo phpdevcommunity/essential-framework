@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Event\ExampleEvent;
 
 /**
- * @see https://github.com/devcoder-xyz/php-event-dispatcher
+ * @see https://github.com/phpdevcommunity/php-event-dispatcher
  */
 final class ExampleListener
 {

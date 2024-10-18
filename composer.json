@@ -1,13 +1,12 @@
 {
-  "name": "devcoder-xyz/essential-framework",
-  "description": "Essential PHP framework Skeleton",
+  "name": "phpdevcommunity/michel-framework",
+  "description": "Michel PHP framework Skeleton",
   "type": "project",
   "license": "MIT",
   "authors": [
     {
-      "name": "F. Michel.R",
-      "email": "dev@devcoder.xyz",
-      "homepage": "https://essential.devcoder.xyz"
+      "name": "F. Michel",
+      "homepage": "https://www.phpdevcommunity.com"
     }
   ],
   "autoload": {
@@ -21,18 +20,15 @@
     "ext-json": "*",
     "laminas/laminas-diactoros": "^2.5",
     "middlewares/base-path": "^2.0",
-    "devcoder-xyz/essential-core": "0.1.0-alpha",
-    "devcoder-xyz/php-event-dispatcher": "^1.0",
-    "devcoder-xyz/php-dependency-injection": "^1.0",
-    "devcoder-xyz/php-router": "^2.0",
-    "devcoder-xyz/php-logging": "^1.0",
-    "devcoder-xyz/php-session": "^1.0",
-    "devcoder-xyz/php-flash": "^1.0",
-    "devcoder-xyz/php-renderer": "^1.0",
-    "devcoder-xyz/php-validator": "^1.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~9.4"
+    "phpdevcommunity/michel-core": "dev-main",
+    "phpdevcommunity/php-router": "^3.0",
+    "phpdevcommunity/psr14-event-dispatcher": "^1.0",
+    "phpdevcommunity/psr11-dependency-injection": "^1.0",
+    "phpdevcommunity/psr3-logger": "^1.0",
+    "phpdevcommunity/php-session": "^1.0",
+    "phpdevcommunity/php-flash": "^1.0",
+    "phpdevcommunity/template-bridge": "^1.0",
+    "phpdevcommunity/php-validator": "^1.0"
   },
   "scripts": {
     "post-create-project-cmd": [

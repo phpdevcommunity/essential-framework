@@ -1,6 +1,6 @@
 ## Creating Custom Routes
 
-One of the fundamental aspects of building web applications is defining routes that map incoming requests to specific actions. In the Essential Framework, you can easily create custom routes to handle various endpoints.
+One of the fundamental aspects of building web applications is defining routes that map incoming requests to specific actions. In the Michel Framework, you can easily create custom routes to handle various endpoints.
 
 To create custom routes, follow these steps:
 
@@ -10,14 +10,14 @@ To create custom routes, follow these steps:
 
 ```php
 return [
-    \Essential\Core\Router\Route::get('index', '/', [\App\Controller\MainController::class]),
-    \Essential\Core\Router\Route::get('api_main', '/api', [\App\Controller\ApiController::class]),
+    \PhpDevCommunity\Michel\Core\Router\Route::get('index', '/', [\App\Controller\MainController::class]),
+    \PhpDevCommunity\Michel\Core\Router\Route::get('api_main', '/api', [\App\Controller\ApiController::class]),
     
     // Add your custom routes here
 ];
 ```
 
-3. To define a new route, use the `\Essential\Core\Router\Route` class, followed by the HTTP method you want to use (`get`, `post`, `put`, `delete`, etc.), a unique route name, the URI pattern, and an array of controller information.
+3. To define a new route, use the `\PhpDevCommunity\Michel\Core\Router\Route` class, followed by the HTTP method you want to use (`get`, `post`, `put`, `delete`, etc.), a unique route name, the URI pattern, and an array of controller information.
 
 For example, let's say you want to create a route that maps to a `UserController` when users visit the `/users` URL:
 
@@ -26,7 +26,7 @@ return [
     // ... (existing routes)
 
     // Custom route for users
-    \Essential\Core\Router\Route::get('users', '/users', [\App\Controller\UserController::class]),
+    \PhpDevCommunity\Michel\Core\Router\Route::get('users', '/users', [\App\Controller\UserController::class]),
 ];
 ```
 
@@ -46,7 +46,7 @@ Remember to tailor your custom routes to your application's specific requirement
 
 ## Router
 
-The Essential Framework comes with a built-in router, [devcoder-xyz/php-router](https://github.com/devcoder-xyz/php-router), to handle routing within your application. This router is pre-configured and ready to use. However, if you prefer to use a different routing library, such as Aura Router or Symfony Routing, you can easily replace the default router.
+The Michel Framework comes with a built-in router, [phpdevcommunity/php-router](https://github.com/phpdevcommunity/php-router), to handle routing within your application. This router is pre-configured and ready to use. However, if you prefer to use a different routing library, such as Aura Router or Symfony Routing, you can easily replace the default router.
 
 ### Replacing the Default Router
 
@@ -63,15 +63,15 @@ composer require aura/router
 2. Remove the default router package:
 
 ```bash
-composer remove devcoder-xyz/php-router
+composer remove phpdevcommunity/php-router
 ```
 
 3. Configure the router in your `services.php` file located in the `config` directory:
 
 ```php
 'router' => static function (ContainerInterface $container): object {
-   $routes = $container->get('essential.routes');
-   $factory = new \Essential\Core\Router\Bridge\RouteFactory();
+   $routes = $container->get('michel.routes');
+   $factory = new \PhpDevCommunity\Michel\Core\Router\Bridge\RouteFactory();
 
    // Create and configure the Aura Router container
    $router = new \Aura\Router\RouterContainer();
@@ -98,15 +98,15 @@ composer require symfony/routing
 2. Remove the default router package:
 
 ```bash
-composer remove devcoder-xyz/php-router
+composer remove phpdevcommunity/php-router
 ```
 
 3. Configure the router in your `services.php` file located in the `config` directory:
 
 ```php
 'router' => static function (ContainerInterface $container): object {
-   $routes = $container->get('essential.routes');
-   $factory = new \Essential\Core\Router\Bridge\RouteFactory();
+   $routes = $container->get('michel.routes');
+   $factory = new \PhpDevCommunity\Michel\Core\Router\Bridge\RouteFactory();
 
    // Create a Symfony RouteCollection
    $router = new \Symfony\Component\Routing\RouteCollection();
@@ -120,18 +120,18 @@ composer remove devcoder-xyz/php-router
 },
    ```
 
-Now you can use the router of your choice to define and handle routes in your Essential Framework application.
+Now you can use the router of your choice to define and handle routes in your Michel Framework application.
 
 ## Defining Routes
 
-In the Essential Framework, you can define routes to specify how different HTTP requests are handled. Routes are defined in the `routes.php` configuration file, which is located in the `config` directory of your project. The `Route` class allows you to define routes with various HTTP methods and handlers.
+In the Michel Framework, you can define routes to specify how different HTTP requests are handled. Routes are defined in the `routes.php` configuration file, which is located in the `config` directory of your project. The `Route` class allows you to define routes with various HTTP methods and handlers.
 
 ### Basic Route Example
 
 Here's a basic example of defining a route using the `Route` class:
 
 ```php
-use Essential\Core\Router\Route;
+use PhpDevCommunity\Michel\Core\Router\Route;
 
 // Define a GET route named 'home' for the root path '/'
 Route::get('home', '/', [HomeController::class]);
@@ -145,7 +145,7 @@ In this example:
 You can specify custom HTTP methods for a route using the `methods` parameter. For example, here's how to define a route that handles a PATCH request:
 
 ```php
-use Essential\Core\Router\Route;
+use PhpDevCommunity\Michel\Core\Router\Route;
 
 // Define a custom route for the path '/custom' that handles PATCH requests
 $customRoute = new Route('custom', '/custom', [CustomController::class], ['PATCH']);
@@ -157,7 +157,7 @@ In this example, the `['PATCH']` array specifies that the route can handle HTTP 
 You can define routes that direct requests to specific controller methods. Here's an example:
 
 ```php
-use Essential\Core\Router\Route;
+use PhpDevCommunity\Michel\Core\Router\Route;
 
 // Define a route named 'user_profile' for the path '/user/profile' that calls the 'show' method on the 'UserProfileController' class
 Route::get('user_profile', '/user/profile', [UserProfileController::class, 'show']);
@@ -171,7 +171,7 @@ In this example:
 You can also define routes that respond to specific HTTP methods like POST, PUT, or DELETE. Here's an example of defining a POST route:
 
 ```php
-use Essential\Core\Router\Route;
+use PhpDevCommunity\Michel\Core\Router\Route;
 
 // Define a POST route named 'create_post' for the path '/posts' that handles creating new posts
 Route::post('create_post', '/posts', [PostController::class, 'create']);
@@ -179,4 +179,4 @@ Route::post('create_post', '/posts', [PostController::class, 'create']);
 
 In this example, `Route::post('create_post', '/posts', [PostController::class, 'create'])` specifies a POST route named 'create_post' for the path '/posts' that calls the 'create' method on the `PostController` class when a POST request is made to this route.
 
-These examples demonstrate how to define routes in your Essential Framework application. You can create routes that handle different HTTP methods and direct requests to specific controllers and methods based on your application's requirements.
+These examples demonstrate how to define routes in your Michel Framework application. You can create routes that handle different HTTP methods and direct requests to specific controllers and methods based on your application's requirements.

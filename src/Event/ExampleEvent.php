@@ -2,10 +2,10 @@
 
 namespace App\Event;
 
-use DevCoder\Listener\Event;
+use PhpDevCommunity\Listener\Event;
 
 /**
- * @see https://github.com/devcoder-xyz/php-event-dispatcher
+ * @see https://github.com/phpdevcommunity/php-event-dispatcher
  */
 final class ExampleEvent extends Event
 {

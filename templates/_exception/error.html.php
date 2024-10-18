@@ -1,6 +1,6 @@
 <?php
 
-use Essential\Core\Http\Exception\HttpExceptionInterface;
+use PhpDevCommunity\Michel\Core\Http\Exception\HttpExceptionInterface;
 
 /**
  * @var HttpExceptionInterface $exception

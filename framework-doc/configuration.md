@@ -1,6 +1,6 @@
-# Configuration in the Essential Framework
+# Configuration in the Michel Framework
 
-The Essential Framework provides flexible configuration options to suit your application's needs. These configurations can be managed through three primary methods: the `.env` file, the `parameters.php` file located in the `/config` directory, and the `framework.php` file, also located in the `/config` directory. This guide will help you understand how to use and manage these configurations effectively.
+The Michel Framework provides flexible configuration options to suit your application's needs. These configurations can be managed through three primary methods: the `.env` file, the `parameters.php` file located in the `/config` directory, and the `framework.php` file, also located in the `/config` directory. This guide will help you understand how to use and manage these configurations effectively.
 
 ### 1. The `.env` File
 
@@ -113,9 +113,9 @@ return [
 //        $builder->addDefinitions($definitions);
 //        return $builder->build();
 
-        return new \DevCoder\DependencyInjection\Container(
+        return new \PhpDevCommunity\DependencyInjection\Container(
             $definitions,
-            new \DevCoder\DependencyInjection\ReflectionResolver()
+            new \PhpDevCommunity\DependencyInjection\ReflectionResolver()
         );
     },
 
@@ -131,7 +131,7 @@ Sure, let's break it down step by step:
 
 ## Configuration Files: The .env File
 
-The Essential Framework leverages the [php-dotenv](https://github.com/devcoder-xyz/php-dotenv) library to manage environment variables via a `.env` file. This file plays a crucial role in configuring your application based on different environments. Below, we'll discuss the default environment variables for both the Core Framework and the entire framework.
+The Michel Framework leverages the [php-dotenv](https://github.com/phpdevcommunity/php-dotenv) library to manage environment variables via a `.env` file. This file plays a crucial role in configuring your application based on different environments. Below, we'll discuss the default environment variables for both the Core Framework and the entire framework.
 
 #### Default Environment Variables in the Core Framework
 
@@ -155,11 +155,11 @@ The Essential Framework leverages the [php-dotenv](https://github.com/devcoder-x
 
 4. **`APP_PUBLIC_DIR`**: It defines the directory for public assets like CSS, JavaScript, and images.
 
-These default environment variables provide a foundation for configuring your Essential Framework application. You can customize these variables in the `.env` file to suit your specific project requirements and environment settings.
+These default environment variables provide a foundation for configuring your Michel Framework application. You can customize these variables in the `.env` file to suit your specific project requirements and environment settings.
 
 ## Configuration Files: The parameters.php File
 
-In the Essential Framework, the `parameters.php` file plays a crucial role in managing application parameters. This file allows you to customize various settings, providing flexibility and adaptability to meet your project's requirements.
+In the Michel Framework, the `parameters.php` file plays a crucial role in managing application parameters. This file allows you to customize various settings, providing flexibility and adaptability to meet your project's requirements.
 
 #### Overridable Core Parameters
 
@@ -173,25 +173,25 @@ You can override certain core parameters in the `parameters.php` file. Here are 
 
 #### Non-Overridable Core Parameters
 
-Certain core parameters in the Essential Framework are non-overridable from the `parameters.php` file. These parameters are set based on the framework's internal configuration and are essential for its operation. Attempting to override these parameters may lead to unexpected behavior. Here are the non-overridable core parameters:
+Certain core parameters in the Michel Framework are non-overridable from the `parameters.php` file. These parameters are set based on the framework's internal configuration and are essential for its operation. Attempting to override these parameters may lead to unexpected behavior. Here are the non-overridable core parameters:
 
-1. **`essential.environment`**: This parameter reflects the application's environment, such as "dev" or "prod," and is determined by the framework's environment settings.
+1. **`michel.environment`**: This parameter reflects the application's environment, such as "dev" or "prod," and is determined by the framework's environment settings.
 
-2. **`essential.debug`**: It indicates whether the application is running in debug mode, typically enabled during development ("dev") and disabled in production ("prod").
+2. **`michel.debug`**: It indicates whether the application is running in debug mode, typically enabled during development ("dev") and disabled in production ("prod").
 
-3. **`essential.project_dir`**: Specifies the project directory path, which is essential for locating various resources within your application.
+3. **`michel.project_dir`**: Specifies the project directory path, which is essential for locating various resources within your application.
 
-4. **`essential.cache_dir`**: Defines the cache directory path where cached data is stored to improve application performance.
+4. **`michel.cache_dir`**: Defines the cache directory path where cached data is stored to improve application performance.
 
-5. **`essential.logs_dir`**: Points to the directory where log files generated by the framework are stored, facilitating debugging and error tracking.
+5. **`michel.logs_dir`**: Points to the directory where log files generated by the framework are stored, facilitating debugging and error tracking.
 
-6. **`essential.config_dir`**: Specifies the directory path for configuration files used by the framework.
+6. **`michel.config_dir`**: Specifies the directory path for configuration files used by the framework.
 
-7. **`essential.public_dir`**: Defines the directory where public assets like CSS, JavaScript, and images are stored.
+7. **`michel.public_dir`**: Defines the directory where public assets like CSS, JavaScript, and images are stored.
 
 **Setting Parameters from `.env`**: Many of these non-overridable parameters can initially be defined or influenced by values provided in the `.env` file. For example, you can set the `APP_ENV`, `APP_CACHE_DIR`, `APP_LOG_DIR`, `APP_CONFIG_DIR`, and `APP_PUBLIC_DIR` in your `.env` file to establish their initial values.
 
-**Kernel Configuration**: The framework's kernel (usually the `BaseKernel`) often plays a central role in initializing various aspects of the application, including some of these non-overridable parameters. For instance, the `essential.environment` and `essential.debug` parameters are determined by the kernel based on the `APP_ENV` value in the `.env` file. Similarly, the kernel may set the `essential.project_dir`, `essential.cache_dir`, `essential.logs_dir`, `essential.config_dir`, and `essential.public_dir` parameters.
+**Kernel Configuration**: The framework's kernel (usually the `BaseKernel`) often plays a central role in initializing various aspects of the application, including some of these non-overridable parameters. For instance, the `michel.environment` and `michel.debug` parameters are determined by the kernel based on the `APP_ENV` value in the `.env` file. Similarly, the kernel may set the `michel.project_dir`, `michel.cache_dir`, `michel.logs_dir`, `michel.config_dir`, and `michel.public_dir` parameters.
 
 In essence, the `.env` file and kernel configuration work together to provide a coherent and flexible way to manage these parameters. The `.env` file sets initial values, while the kernel may further configure or derive values based on the environment and other factors.
 
@@ -199,7 +199,7 @@ This flexibility allows developers to adapt their application's behavior and con
 
 ## Configuration Files: The `framework.php` File
 
-The `framework.php` file, located in the `/config` directory of your project, contains essential configuration settings specific to the Essential Framework. This file is pivotal in defining how the framework operates and can be customized according to your project's requirements.
+The `framework.php` file, located in the `/config` directory of your project, contains essential configuration settings specific to the Michel Framework. This file is pivotal in defining how the framework operates and can be customized according to your project's requirements.
 
 Here's a detailed breakdown of the sections within the `framework.php` file:
 
@@ -213,7 +213,7 @@ In this part, you specify how the `ResponseFactoryInterface` instance is instant
 
 ### `container` Closure
 
-Here, you define the creation of the dependency injection container. By default, the framework uses the "DevCoder\DependencyInjection\Container" class from the "devcoder-xyz/php-dependency-injection" library. This container is responsible for managing and providing instances of various services and dependencies throughout your application.
+Here, you define the creation of the dependency injection container. By default, the framework uses the "PhpDevCommunity\DependencyInjection\Container" class from the "phpdevcommunity/php-dependency-injection" library. This container is responsible for managing and providing instances of various services and dependencies throughout your application.
 
 You have the flexibility to customize this closure to use a different container implementation or to add your container configuration. For instance, if you wish to use PHP-DI as your container, you can modify it.
 
@@ -221,7 +221,7 @@ You have the flexibility to customize this closure to use a different container 
 
 In this section, you can specify custom environments as an array of environment names. Custom environments enable you to configure your application differently based on the environment it is running in. These custom environments can be utilized to adapt the framework to specific project requirements and scenarios.
 
-The `framework.php` file is a critical component of your Essential Framework configuration. Customizing its settings allows you to tailor the framework's behavior to match the unique needs of your project.
+The `framework.php` file is a critical component of your Michel Framework configuration. Customizing its settings allows you to tailor the framework's behavior to match the unique needs of your project.
 
-By understanding and effectively managing the `.env`, `parameters.php`, and `framework.php` configuration files, you gain fine-grained control over your Essential Framework application, making it versatile and adaptable to a variety of use cases and environments.
+By understanding and effectively managing the `.env`, `parameters.php`, and `framework.php` configuration files, you gain fine-grained control over your Michel Framework application, making it versatile and adaptable to a variety of use cases and environments.
 

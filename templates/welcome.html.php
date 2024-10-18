@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noodp,notranslate,noimageindex"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essential PHP Framework!</title>
+    <title>Michel PHP Framework!</title>
     <style>
         *,
         *::before,
@@ -112,15 +112,15 @@
 </head>
 <body>
 <header>
-    <div class="badge">Essential <?php echo \Essential\Core\BaseKernel::VERSION ?> 🌟</div>
-    <?php if (getenv('APP_ENV') === 'dev'): ?>
+    <div class="badge">PhpDevCommunity Michel <?php echo \PhpDevCommunity\Michel\Core\BaseKernel::VERSION ?> 🌟</div>
+    <?php if (getenv('APP_ENV') === 'dev') : ?>
         <div class="badge">PHP <?php echo phpversion() ?> 🐘</div>
         <div class="badge">ENVIRONMENT : <?php echo getenv('APP_ENV') ?></div>
     <?php endif; ?>
 </header>
 <main>
     <div class="container text-center">
-        <h1 class="title">Essential <span class="small">PHP micro-framework 🌐</span></h1>
+        <h1 class="title">PhpDevCommunity Michel <span class="small">PHP micro-framework 🌐</span></h1>
         <h2 class="sub-title">Fast and light Framework for PHP ⚡</h2>
         <h3 class="h3">Size : 2,9MB with the dependencies (production environment)</h3>
         <p>
@@ -133,8 +133,8 @@
 <footer>
     <p class="text-center">
         Made with <span style="color: #e25555;">❤</span> in Paris by
-        <a class="mr-4" href="https://essential.devcoder.xyz" target="_blank" rel="noopener">
-            Devcoder.xyz (F. Michel.R)
+        <a class="mr-4" href="https://www.phpdevcommunity.com" target="_blank" rel="noopener">
+            PhpDevCommunity (F. Michel.R)
         </a>
     </p>
 </footer>

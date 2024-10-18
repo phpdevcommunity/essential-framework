@@ -1,13 +1,13 @@
 # Templates and Rendering
 
-The Essential Framework includes a built-in templating system by default, which uses the devcoder-xyz/php-renderer package. This simple PHP renderer allows you to create and render templates easily. You can refer to the official documentation for detailed information: [devcoder-xyz/php-renderer GitHub](https://github.com/devcoder-xyz/php-renderer).
+The Michel Framework includes a built-in templating system by default, which uses the phpdevcommunity/php-renderer package. This simple PHP renderer allows you to create and render templates easily. You can refer to the official documentation for detailed information: [phpdevcommunity/php-renderer GitHub](https://github.com/phpdevcommunity/php-renderer).
 
 However, if you prefer to use the Twig templating engine, you can easily switch by following these steps:
 
-1. Remove the devcoder-xyz/php-renderer package:
+1. Remove the phpdevcommunity/php-renderer package:
 
 ```
-composer remove devcoder-xyz/php-renderer
+composer remove phpdevcommunity/php-renderer
    ```
 
 2. Install Twig using Composer:
@@ -29,7 +29,7 @@ Voici le sous-chapitre sur les helpers disponibles avec des exemples pour les mo
 
 ## Template Helpers
 
-The Essential Framework provides a set of useful template helpers for both PHP Renderer and Twig.
+The Michel Framework provides a set of useful template helpers for both PHP Renderer and Twig.
 
 #### `render_view`
 

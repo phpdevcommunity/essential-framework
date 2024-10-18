@@ -1,16 +1,16 @@
-# Middleware in the Essential Framework
+# Middleware in the Michel Framework
 
-Middleware plays a crucial role in the Essential Framework, allowing you to perform actions before and after handling an HTTP request. The framework is fully compatible with the PSR-15 standard, which means that any PSR-15 middleware can be used seamlessly with the framework.
+Middleware plays a crucial role in the Michel Framework, allowing you to perform actions before and after handling an HTTP request. The framework is fully compatible with the PSR-15 standard, which means that any PSR-15 middleware can be used seamlessly with the framework.
 
 ## Default Middleware Configuration
 
-In the Essential Framework, middleware is defined and configured in the `config/middleware.php` file. Let's explore the default middleware configuration:
+In the Michel Framework, middleware is defined and configured in the `config/middleware.php` file. Let's explore the default middleware configuration:
 
 ```php
 return [
     \Middlewares\BasePath::class => ['dev', 'prod'],
-    \Essential\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
-    \Essential\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
 ];
 ```
 
@@ -20,33 +20,33 @@ Here's an explanation of each middleware:
 
 - **Description**: The BasePath middleware adjusts the base path of the application based on the `app.url` parameter from the container, which is populated by the `APP_URL` environment variable defined in the `.env` file. This middleware is essential when your application is hosted in a subdirectory, as it ensures that routing and URLs are correctly generated to reflect the correct base path.
 
-### 2. `\Essential\Core\Middlewares\RouterMiddleware::class`
+### 2. `\PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class`
 
 - **Description**: The RouterMiddleware is a fundamental middleware responsible for routing incoming HTTP requests to the appropriate controller action. It examines the routes defined in your application and determines which controller should handle the request.
 
-### 3. `\Essential\Core\Middlewares\ControllerMiddleware::class`
+### 3. `\PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class`
 
-- **Description**: The ControllerMiddleware is another critical middleware in the Essential Framework. It processes the HTTP request, resolves the controller, and executes the appropriate action method. It also handles dependency injection into controllers.
+- **Description**: The ControllerMiddleware is another critical middleware in the Michel Framework. It processes the HTTP request, resolves the controller, and executes the appropriate action method. It also handles dependency injection into controllers.
 
 ## Middleware Execution Order
 
-It's important to note that middleware in the Essential Framework is executed in the order they are defined in the `middleware.php` configuration file. Middleware at the beginning of the list will be executed first, while middleware at the end will be executed last.
+It's important to note that middleware in the Michel Framework is executed in the order they are defined in the `middleware.php` configuration file. Middleware at the beginning of the list will be executed first, while middleware at the end will be executed last.
 
-For proper framework functionality, ensure that the `\Essential\Core\Middlewares\ControllerMiddleware::class` is always placed last in the list of middleware. This ensures that the controller action is executed after routing and other necessary processing.
+For proper framework functionality, ensure that the `\PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class` is always placed last in the list of middleware. This ensures that the controller action is executed after routing and other necessary processing.
 
 ## Middleware Execution in Different Environments
 
-The Essential Framework supports different environments to accommodate various development stages. Two primary environments are defined: `dev` and `prod`.
+The Michel Framework supports different environments to accommodate various development stages. Two primary environments are defined: `dev` and `prod`.
 
 - **Development (dev) Environment**: When the application runs in the `dev` environment, the following middlewares are executed:
     - `\Middlewares\BasePath::class`
-    - `\Essential\Core\Middlewares\RouterMiddleware::class`
-    - `\Essential\Core\Middlewares\ControllerMiddleware::class`
+    - `\PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class`
+    - `\PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class`
 
 - **Production (prod) Environment**: In the `prod` environment, the same middlewares as in the `dev` environment are executed:
     - `\Middlewares\BasePath::class`
-    - `\Essential\Core\Middlewares\RouterMiddleware::class`
-    - `\Essential\Core\Middlewares\ControllerMiddleware::class`
+    - `\PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class`
+    - `\PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class`
 
 The distinction between the environments allows you to configure your application differently based on whether it's in a development or production context, providing flexibility and performance optimization during different stages of your project.
 
@@ -92,8 +92,8 @@ return [
     // Custom development middleware entry
     \App\Middleware\DebugMiddleware::class => ['dev'],
     
-    \Essential\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
-    \Essential\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
 ];
 ```
 

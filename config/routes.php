@@ -3,19 +3,19 @@
 declare(strict_types=1);
 
 /**
- * Pulsar PHP Framework
+ * Michel PHP Framework
  *
  * An open source application development framework for PHP
  *
- * @package    Pulsar
- * @author    Devcoder.xyz
+ * @package    Michel
+ * @author    PhpDevCommunity
  * @license    https://opensource.org/licenses/MIT	MIT License
- * @link    https://www.devcoder.xyz
+ * @link    https://www.phpdevcommunity.com
  */
 
 use App\Controller\ApiController;
 
 return [
-    \Essential\Core\Router\Route::get('index', '/', [\App\Controller\MainController::class]),
-    \Essential\Core\Router\Route::get('api_main', '/api', [ApiController::class]),
+    \PhpDevCommunity\Michel\Core\Router\Route::get('index', '/', [\App\Controller\MainController::class]),
+    \PhpDevCommunity\Michel\Core\Router\Route::get('api_main', '/api', [ApiController::class]),
 ];

@@ -4,19 +4,19 @@
 declare(strict_types=1);
 
 /**
- * Essential PHP Framework
+ * Michel PHP Framework
  *
  * An open source application development framework for PHP
  *
- * @package	Essential
- * @author	Devcoder.xyz
+ * @package	PhpDevCommunity Michel
+ * @author	PhpDevCommunity
  * @license	https://opensource.org/licenses/MIT	MIT License
- * @link	https://www.devcoder.xyz
+ * @link	https://www.phpdevcommunity.com
  */
 
 #--------------------------------------------------------------------
 # List of packages
 #--------------------------------------------------------------------
 return [
-    \Essential\Core\Package\EssentialCorePackage::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Package\MichelCorePackage::class => ['dev', 'prod'],
 ];

@@ -3,14 +3,14 @@
 declare(strict_types=1);
 
 /**
- * Essential PHP Framework
+ * Michel PHP Framework
  *
  * An open source application development framework for PHP
  *
- * @package	Essential
- * @author	Devcoder.xyz
+ * @package	PhpDevCommunity Michel
+ * @author	PhpDevCommunity
  * @license	https://opensource.org/licenses/MIT	MIT License
- * @link	https://www.devcoder.xyz
+ * @link	https://www.phpdevcommunity.com
  */
 
 #--------------------------------------------------------------------

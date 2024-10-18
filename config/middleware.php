@@ -1,13 +1,13 @@
 <?php
 /**
- * Essential PHP Framework
+ * Michel PHP Framework
  *
  * An open source application development framework for PHP
  *
- * @package    Essential
- * @author    Devcoder.xyz
+ * @package    PhpDevCommunity Michel
+ * @author    PhpDevCommunity
  * @license    https://opensource.org/licenses/MIT	MIT License
- * @link    https://www.devcoder.xyz
+ * @link    https://www.phpdevcommunity.com
  */
 
 
@@ -16,6 +16,8 @@
 #--------------------------------------------------------------------
 return [
     \Middlewares\BasePath::class => ['dev', 'prod'],
-    \Essential\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
-    \Essential\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
+//    \App\Middleware\MaintenanceMiddleware::class =>  ['dev', 'prod'],
+//    \App\Middleware\ForceHttpsMiddleware::class => ['prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
+    \PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
 ];

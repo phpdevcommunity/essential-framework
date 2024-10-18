@@ -2,24 +2,24 @@
 
 ## PSR-11 Compatibility
 
-The Essential Framework fully embraces the principles of [PSR-11](https://www.php-fig.org/psr/psr-11/), which is a standard recommendation by the PHP-FIG (PHP Framework Interop Group) for creating and interacting with service containers in PHP. This compatibility means that any container that adheres to PSR-11 standards can be seamlessly integrated with the framework.
+The Michel Framework fully embraces the principles of [PSR-11](https://www.php-fig.org/psr/psr-11/), which is a standard recommendation by the PHP-FIG (PHP Framework Interop Group) for creating and interacting with service containers in PHP. This compatibility means that any container that adheres to PSR-11 standards can be seamlessly integrated with the framework.
 
 ## Default Container
 
-Upon installation, the Essential Framework comes equipped with the `devcoder-xyz/php-dependency-injection` container as the default service container. This container is pre-configured and provides robust support for managing services and their dependencies within the framework.
+Upon installation, the Michel Framework comes equipped with the `phpdevcommunity/php-dependency-injection` container as the default service container. This container is pre-configured and provides robust support for managing services and their dependencies within the framework.
 
 ## Configuring Alternative Service Containers
 
-In addition to the default service container, the Essential Framework offers flexibility in choosing alternative containers that suit your project requirements. You can easily switch to using the [PHP-DI](https://php-di.org/) container, for instance, by making a few modifications.
+In addition to the default service container, the Michel Framework offers flexibility in choosing alternative containers that suit your project requirements. You can easily switch to using the [PHP-DI](https://php-di.org/) container, for instance, by making a few modifications.
 
 ### Using PHP-DI as the Service Container
 
 To replace the default service container with PHP-DI, follow these steps:
 
-1. Remove the `devcoder-xyz/php-dependency-injection` package from your project's dependencies by running:
+1. Remove the `phpdevcommunity/php-dependency-injection` package from your project's dependencies by running:
 
 ```bash
-composer remove devcoder-xyz/php-dependency-injection
+composer remove phpdevcommunity/php-dependency-injection
 ```
 
 2. Install PHP-DI by running:
@@ -47,11 +47,11 @@ composer require php-di/php-di
 },
 ```
 
-By making these changes, you configure the Essential Framework to utilize PHP-DI as the service container. This offers you the flexibility and extensive features provided by PHP-DI for managing services and their dependencies within your application.
+By making these changes, you configure the Michel Framework to utilize PHP-DI as the service container. This offers you the flexibility and extensive features provided by PHP-DI for managing services and their dependencies within your application.
 
 ## Services Configuration in `services.php`
 
-The `services.php` file located in the `/config` directory plays a crucial role in configuring essential services within your Essential Framework application. By default, the framework comes preconfigured with several essential services. Below is an overview of these services and their respective configurations:
+The `services.php` file located in the `/config` directory plays a crucial role in configuring essential services within your Michel Framework application. By default, the framework comes preconfigured with several essential services. Below is an overview of these services and their respective configurations:
 
 ### 1. `BasePath`
 
@@ -83,25 +83,25 @@ SessionStorageInterface::class => static function (ContainerInterface $container
 ```php
 Flash::class => static function (ContainerInterface $container) {
   $session = $container->get(SessionStorageInterface::class);
-  return new DevCoder\Flash\Flash($session);
+  return new PhpDevCommunity\Flash\Flash($session);
 },
 ```
 
-These services are configured by default to provide essential functionality for your Essential Framework application. Depending on your project's requirements, you can extend this list by defining additional services in the `services.php` file or customize the existing configurations as needed.
+These services are configured by default to provide essential functionality for your Michel Framework application. Depending on your project's requirements, you can extend this list by defining additional services in the `services.php` file or customize the existing configurations as needed.
 
 ## Retrieving Services
 
-In the Essential Framework, services are essential components of your application that provide various functionalities. You can retrieve these services in different ways depending on your preference and requirements.
+In the Michel Framework, services are essential components of your application that provide various functionalities. You can retrieve these services in different ways depending on your preference and requirements.
 
 ### 1. Retrieving Services in a Controller
 
 #### Using the `$this->get()` Method
 
-One way to retrieve services in a controller is by extending the `Essential\Core\Controller\Controller` class and using the `$this->get(Service::class)` method. Here's an example:
+One way to retrieve services in a controller is by extending the `PhpDevCommunity\Michel\Core\Controller\Controller` class and using the `$this->get(Service::class)` method. Here's an example:
 
 ```php
-use DevCoder\Flash\Flash;
-use Essential\Core\Controller\Controller;
+use PhpDevCommunity\Flash\Flash;
+use PhpDevCommunity\Michel\Core\Controller\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -124,8 +124,8 @@ class MainController extends Controller
 Another way to retrieve services is by injecting them directly into your controller's constructor. Here's an example:
 
 ```php
-use DevCoder\Flash\Flash;
-use Essential\Core\Controller\Controller;
+use PhpDevCommunity\Flash\Flash;
+use PhpDevCommunity\Michel\Core\Controller\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

@@ -1,6 +1,6 @@
-# Commands in the Essential Framework
+# Commands in the Michel Framework
 
-The Essential Framework defaults to using the Symfony Console component for command-line command management. This integration allows you to create and execute commands to automate various tasks within your application.
+The Michel Framework defaults to using the Symfony Console component for command-line command management. This integration allows you to create and execute commands to automate various tasks within your application.
 
 ## Creating a Command
 
@@ -53,7 +53,7 @@ This command will display a list of all registered commands in your application,
 
 ## Default Commands
 
-The Essential Framework includes several default commands in its core for common tasks. These commands are available out of the box and can be executed using the Symfony Console. Some of the default commands are:
+The Michel Framework includes several default commands in its core for common tasks. These commands are available out of the box and can be executed using the Symfony Console. Some of the default commands are:
 
 - `cache:clear`: Clears the application cache.
 - `make:controller`: Generates a new controller.
@@ -85,4 +85,4 @@ return [
 
 With this configuration, your custom command `MyCommand` will be available for execution using the Symfony Console.
 
-By following these guidelines, you can create, manage, and execute commands in your Essential Framework application efficiently. Custom commands are a powerful tool for automating tasks and managing various aspects of your application's functionality.
+By following these guidelines, you can create, manage, and execute commands in your Michel Framework application efficiently. Custom commands are a powerful tool for automating tasks and managing various aspects of your application's functionality.
