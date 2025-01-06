@@ -14,8 +14,9 @@ declare(strict_types=1);
  */
 
 use App\Controller\ApiController;
+use PhpDevCommunity\Route;
 
 return [
-    \PhpDevCommunity\Michel\Core\Router\Route::get('index', '/', [\App\Controller\MainController::class]),
-    \PhpDevCommunity\Michel\Core\Router\Route::get('api_main', '/api', [ApiController::class]),
+    Route::get('index', '/', [\App\Controller\MainController::class]),
+    Route::get('api_main', '/api', [ApiController::class]),
 ];

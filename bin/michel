@@ -12,6 +12,9 @@
  */
 
 use App\Kernel;
+use PhpDevCommunity\Console\CommandParser;
+use PhpDevCommunity\Console\CommandRunner;
+use PhpDevCommunity\Console\Output;
 
 if (phpversion() < '7.4') {
     die('Your PHP version must be 7.4 or higher to run Michel PHP Framework. Your version: ' . phpversion() . PHP_EOL);
@@ -25,5 +28,9 @@ require_once MICHEL_COMPOSER_AUTOLOAD_FILE;
 $kernel = new Kernel();
 $container = $kernel->getContainer();
 
-$application = $container->get(\Symfony\Component\Console\Application::class);
-$application->run();
+/**
+ * @var CommandRunner $commandRunner
+ */
+$commandRunner = $container->get(CommandRunner::class);
+$exitCode = $commandRunner->run(new CommandParser(), new Output());
+exit($exitCode);

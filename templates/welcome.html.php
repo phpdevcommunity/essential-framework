@@ -120,7 +120,7 @@
 </header>
 <main>
     <div class="container text-center">
-        <h1 class="title">PhpDevCommunity Michel <span class="small">PHP micro-framework 🌐</span></h1>
+        <h1 class="title">PhpDevCommunity Michel <span class="small">PHP framework 🌐</span></h1>
         <h2 class="sub-title">Fast and light Framework for PHP ⚡</h2>
         <h3 class="h3">Size : 2,9MB with the dependencies (production environment)</h3>
         <p>

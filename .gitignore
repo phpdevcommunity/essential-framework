@@ -1,4 +1,6 @@
 /vendor/
 /.idea/
 .env
-/data/
+/var/log
+/var/cache
+/var/session

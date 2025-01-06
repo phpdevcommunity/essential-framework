@@ -14,10 +14,18 @@
 #--------------------------------------------------------------------
 # List of Middleware
 #--------------------------------------------------------------------
+use Middlewares\BasePath;
+use PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware;
+use PhpDevCommunity\Michel\Core\Middlewares\ForceHttpsMiddleware;
+use PhpDevCommunity\Michel\Core\Middlewares\IpRestrictionMiddleware;
+use PhpDevCommunity\Michel\Core\Middlewares\MaintenanceMiddleware;
+use PhpDevCommunity\RouterMiddleware;
+
 return [
-    \Middlewares\BasePath::class => ['dev', 'prod'],
-//    \App\Middleware\MaintenanceMiddleware::class =>  ['dev', 'prod'],
-//    \App\Middleware\ForceHttpsMiddleware::class => ['prod'],
-    \PhpDevCommunity\Michel\Core\Middlewares\RouterMiddleware::class => ['dev', 'prod'],
-    \PhpDevCommunity\Michel\Core\Middlewares\ControllerMiddleware::class => ['dev', 'prod'],
+    BasePath::class => ['dev', 'prod'],
+    ForceHttpsMiddleware::class => ['prod'],
+    MaintenanceMiddleware::class =>  ['dev', 'prod'],
+    IpRestrictionMiddleware::class => ['prod'],
+    RouterMiddleware::class => ['dev', 'prod'],
+    ControllerMiddleware::class => ['dev', 'prod'],
 ];

@@ -21,18 +21,17 @@
     "laminas/laminas-diactoros": "^2.5",
     "middlewares/base-path": "^2.0",
     "phpdevcommunity/michel-core": "dev-main",
-    "phpdevcommunity/php-router": "^3.0",
-    "phpdevcommunity/psr14-event-dispatcher": "^1.0",
-    "phpdevcommunity/psr11-dependency-injection": "^1.0",
-    "phpdevcommunity/psr3-logger": "^1.0",
     "phpdevcommunity/php-session": "^1.0",
     "phpdevcommunity/php-flash": "^1.0",
-    "phpdevcommunity/template-bridge": "^1.0",
+    "phpdevcommunity/psr11-dependency-injection": "^1.0",
+    "phpdevcommunity/psr3-logger": "^1.0",
     "phpdevcommunity/php-validator": "^1.0"
   },
   "scripts": {
     "post-create-project-cmd": [
-      "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
+      "@php -r \"if (!is_file('.env') && is_file('.env.dist')) { copy('.env.dist', '.env'); }\"",
+      "@php -r \"if (!is_dir('var/log')) { mkdir('var/log', 0755, true); }\"",
+      "@php -r \"if (!is_dir('var/cache')) { mkdir('var/cache', 0755, true); }\""
     ]
   }
 }

@@ -14,7 +14,7 @@ final class ApiController extends Controller
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
         return json_response([
-            'framework' => BaseKernel::NAME . ' PHP micro-framework',
+            'framework' => BaseKernel::NAME . ' PHP framework',
             'version' => BaseKernel::VERSION,
             'title' => 'Fast and light Framework for PHP',
             'sub_title' => 'Size : 2,9MB with the dependencies (production environment)',

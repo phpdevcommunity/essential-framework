@@ -19,4 +19,5 @@ declare(strict_types=1);
 #--------------------------------------------------------------------
 return [
     \PhpDevCommunity\Michel\Core\Package\MichelCorePackage::class => ['dev', 'prod'],
+    \PhpDevCommunity\Session\Michel\Package\MichelSessionPackage::class => ['dev', 'prod'],
 ];

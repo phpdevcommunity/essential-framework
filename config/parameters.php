@@ -17,8 +17,7 @@ declare(strict_types=1);
 # Parameters
 #--------------------------------------------------------------------
 return [
-    'app.template_dir' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'templates',
-
+//    'session.save_path' => '/tmp'
 //    'database.host' => getenv('DATABASE_HOST'),
 //    'database.db' => getenv('DATABASE_DB'),
 //    'database.user' => getenv('DATABASE_USER'),
