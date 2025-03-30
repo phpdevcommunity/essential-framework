@@ -84,8 +84,6 @@ This command reads the configuration from the `docker-compose.yml` file and laun
 
 Choose the method that best suits your development environment and preferences for running the Michel Framework locally.
 
-![alt text](./framework-doc/_essential_welcome.png)
-
 ## Project Structure
 
 The Michel Framework follows a structured directory layout to help you organize your application code, configuration, and other assets efficiently. Below is an overview of the project's directory structure:

@@ -122,7 +122,7 @@
     <div class="container text-center">
         <h1 class="title">PhpDevCommunity Michel <span class="small">PHP framework 🌐</span></h1>
         <h2 class="sub-title">Fast and light Framework for PHP ⚡</h2>
-        <h3 class="h3">Size : 2,9MB with the dependencies (production environment)</h3>
+        <h3 class="h3">Size : 6,4MB with the dependencies (production environment)</h3>
         <p>
             Set up web applications and APIs with clean, simple code and very easy configuration.<br/>
             You choose which components you want to use, nothing is imposed!<br/>

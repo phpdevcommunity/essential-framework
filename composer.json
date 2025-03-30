@@ -2,7 +2,7 @@
   "name": "phpdevcommunity/michel-framework",
   "description": "Michel PHP framework Skeleton",
   "type": "project",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "authors": [
     {
       "name": "F. Michel",

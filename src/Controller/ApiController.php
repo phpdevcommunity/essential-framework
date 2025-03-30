@@ -17,7 +17,7 @@ final class ApiController extends Controller
             'framework' => BaseKernel::NAME . ' PHP framework',
             'version' => BaseKernel::VERSION,
             'title' => 'Fast and light Framework for PHP',
-            'sub_title' => 'Size : 2,9MB with the dependencies (production environment)',
+            'sub_title' => 'Size : 6,4MB with the dependencies (production environment)',
             'detail' => 'Set up web applications and APIs with clean, simple code and very easy configuration. You choose which components you want to use, nothing is imposed! No configuration in YML, .ini or xml, only PHP',
             'other' => 'Made with ❤ in Paris by PhpDevCommunity (F. Michel.R) Contact us'
         ]);
